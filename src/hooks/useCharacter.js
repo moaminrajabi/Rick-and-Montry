@@ -18,7 +18,7 @@ export default function useCharacter(url, query) {
         // fetch => err.name ==="AbortError"
         // axios => axios.isCancel()
         if (!axios.isCancel()) {
-          setCharacters([]);
+          setcharacters([]);
           toast.error(err.response.data.error);
         }
       } finally {

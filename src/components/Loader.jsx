@@ -1,4 +1,5 @@
 import React from "react";
+import { LoaderIcon } from "react-hot-toast";
 
 function Loader() {
   return (
