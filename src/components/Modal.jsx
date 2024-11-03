@@ -1,4 +1,4 @@
-import { title } from "process";
+import { XCircleIcon } from "@heroicons/react/20/solid";
 import React from "react";
 
 function Modal({ open, onOpen, title, children }) {
@@ -9,7 +9,11 @@ function Modal({ open, onOpen, title, children }) {
       <div className="modal">
         <div className="modal__header">
           <h2 className="title">{title}</h2>
+          <button onClick={() => onOpen(false)}>
+            <XCircleIcon className="icon close" />
+          </button>
         </div>
+        {children}
       </div>
     </div>
   );
