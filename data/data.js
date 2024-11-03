@@ -1,4 +1,5 @@
 export const character = {
+
   id: 1,
   name: "Rick Sanchez",
   status: "Dead",
@@ -74,3 +75,4 @@ export const episodes = [
     created: "2017-11-10T12:56:33.916Z",
   },
 ];
+
