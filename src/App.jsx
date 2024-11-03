@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import NavBar, { Favourites, Search } from "./components/NavBar";
 import useLocalStorage from "./hooks/useLocalStorage";
+import CharacterList from "./components/CharacterList";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -37,7 +38,7 @@ function App() {
         />
       </NavBar>
       <Main>
-        
+        <CharacterList selectedId={selectedId} characters={characters} />
       </Main>
     </div>
   );
