@@ -7,6 +7,10 @@ import CharacterList from "./components/CharacterList";
 function App() {
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState(null);
+  const { characters, isLoading } = useCharacters(
+    "https://rickandmortyapi.com/api/character/?name",
+    query
+  );
   const [favourites, setFavourites] = useLocalStorage("FAVOURITES", []);
 
   useEffect(() => {
@@ -38,7 +42,13 @@ function App() {
         />
       </NavBar>
       <Main>
-        <CharacterList selectedId={selectedId} characters={characters} />
+        <CharacterList
+          selectedId={selectedId}
+          characters={characters}
+          isLoading={isLoading}
+          onSelectCharacter={handleSelectCharacter}
+        />
+        
       </Main>
     </div>
   );
